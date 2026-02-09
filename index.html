@@ -1,0 +1,154 @@
+<div class="post-body post-content">
+<iframe aria-label="Contact Us" frameborder="0" id="crossOriginIframe" loading="lazy" name="Contact" src="https://forms.zohopublic.com/robotfx1/form/ContactUs/formperma/cpL5oJ2L_iXNr1lHkXG-mFv0nKsL4KQg3-poIFGzhKE" style="height:800px; width:100%;border:none;margin:auto;"></iframe>
+<script>
+//<![CDATA[
+document.addEventListener('DOMContentLoaded', function () {
+    // --- PART 1: Remove links to nonexistent anchors ---
+    const linkshDiv = document.querySelector('.linksh');
+    if (linkshDiv) {
+        const links = linkshDiv.querySelectorAll('a');
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (!targetElement) {
+                    link.style.display = 'none';
+                }
+            }
+        });
+    }
+
+    // --- PART 2: Lazy-load YouTube iframe ---
+    const container = document.querySelector('.youtube-lazy');
+    if (!container) return;
+
+    const videoId = container.getAttribute('data-video-id');
+    const si = container.getAttribute('data-si');
+
+    function createIframe(src = null) {
+        if (container.querySelector("iframe")) return;
+
+        const iframe = document.createElement("iframe");
+        iframe.setAttribute("width", "560");
+        iframe.setAttribute("height", "315");
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allowfullscreen", "");
+        iframe.setAttribute("loading", "lazy");
+        iframe.setAttribute("title", "YouTube video player");
+        iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+        iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+        iframe.setAttribute("name", "youtubeframe");
+        iframe.src = src || `https://www.youtube.com/embed/${videoId}?autoplay=1&si=${encodeURIComponent(si)}`;
+
+        container.innerHTML = "";
+        container.appendChild(iframe);
+    }
+
+    function scrollToIframeCenter() {
+        container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // On thumbnail click
+    container.addEventListener("click", () => {
+        createIframe();
+        scrollToIframeCenter();
+    });
+
+    // On ▶️ link click
+    document.querySelectorAll('a[target="youtubeframe"]').forEach(link => {
+        link.addEventListener("click", (e) => {
+            const iframeExists = container.querySelector("iframe");
+            if (!iframeExists) {
+                e.preventDefault();
+                createIframe(link.href);
+                setTimeout(() => {
+                    window.open(link.href, "youtubeframe");
+                    scrollToIframeCenter();
+                }, 200);
+            } else {
+                scrollToIframeCenter();
+            }
+        });
+    });
+});
+//]]>
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Contact Us",
+  "url": "https://www.robotfx.org/p/contact-us.html",
+  "description": "",
+  "operatingSystem": "MetaTrader 4, MetaTrader 5 (Windows, macOS, Linux with Wine/VM)",
+  "applicationCategory": "https://schema.org/FinanceApplication",
+  "applicationSuite": "MetaTrader",
+  
+    "screenshot": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjp75CL5feBC7QYmLKNcIU4PU6_T5zv3w_qW7dPZ01x67l8enIpkXgNGhjTQ_91zTj9MaAaG2abP8_ccEUvxFlb8LAZ5b2s17mH9OO-y4qhShO7h2PfItjxXYU_eSQtI3M7G0qc2c22Sx_HWH9vvaqInwqmS-1IzeVauznK00gH2_oG85PsLRreoazmsXuh/s16000-e90/robotfx_forex_trading_tools.jpg"
+    },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "RobotFX Team",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/a/AVvXsEjqDhYXLdZI2Hzi6vkQ2pnPz20A0rNyP3HTYoia8-RUD3170pCSfv77ACpX05KJt2iIgwDcm6N79AqUxzKoAFgIupT-XgEC9rzlwDH4hBMKDACgfLPjg2UaySbCEQUW9mZnMlHq_n0q4WC8juOoEAtodFyQcP_M0J9fxW3c3UUy6z7L9oYzcOgG-anlGA=s128-e365-rw"
+    }
+  },
+  "datePublished": "2025-07-30T02:23:00-07:00",
+  "dateModified": "2025-07-30T02:23:00-07:00",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "price": "0",
+    "priceCurrency": "USD",
+    "url": "https://www.robotfx.org/p/contact-us.html"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
+  },
+  "review": [
+    
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use Contact Us",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Functions",
+      "text": "Explore the core functions of the Contact Us."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Charts",
+      "text": "Check the charts to see Contact Us examples and understand how it works."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Settings",
+      "text": "Adjust the Contact Us settings according to the instructions and your preferences."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Videos",
+      "text": "Watch tutorial videos for a better understanding of how Contact Us works."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Download",
+      "text": "Download the Contact Us and copy it in the MetaTrader folder."
+    }
+  ]
+}
+</script>
+</div>
